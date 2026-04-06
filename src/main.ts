@@ -44,7 +44,7 @@ contact_container.classList.add('contact-container')
 
 const btn_mail = document.createElement('a')
 btn_mail.classList.add('btn-mail', 'btns')
-btn_mail.href = '#'
+btn_mail.href = 'mailto:reservas@lauranovoamusic.com'
 
 const icon_mail = document.createElement('img')
 icon_mail.classList.add('icons', 'icon-mail')
@@ -53,13 +53,17 @@ icon_mail.alt = 'icon mail'
 
 const mail_text = document.createElement('span')
 mail_text.classList.add('mail-text')
-mail_text.textContent = "Reservas@lauranovoamusic.com"
+mail_text.textContent = "reservas@lauranovoamusic.com"
 
 // Boton ws
 
 const btn_ws = document.createElement('a')
 btn_ws.classList.add('btn-ws', 'btns')
-btn_ws.href = '#'
+const phone_number = '573006904590'
+const text = encodeURIComponent("Hola Laura, me gustaría solicitar información exclusiva para mi boda en Cartagena.")
+btn_ws.href = `https://wa.me/${phone_number}?text=${text}`;
+btn_ws.target = '_blank'
+btn_ws.rel = "noopener noreferrer";
 
 const icon_ws = document.createElement('img')
 icon_ws.classList.add('icons', 'icon_ws')
