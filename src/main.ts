@@ -1,60 +1,79 @@
+import mail from './assets/icons/mail.svg'
+import ws from './assets/icons/ws.svg'
+import logo_lnm from './assets/Logo-dorado-24.png'
 import './style.css'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.ts'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src=${viteLogo} class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Laura Novoa Music</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const app = document.querySelector<HTMLDivElement>('#app')
 
-<div class="ticks"></div>
+const container_general = document.createElement('div')
+container_general.classList.add('container-general')
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src=${viteLogo} alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+const logo = document.createElement('img')
+logo.classList.add('logo')
+logo.src = logo_lnm
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+const title = document.createElement('h1')
+title.classList.add('title')
+title.textContent = 'the soul of your wedding in Cartagena'
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// contendor de botones mail y whatsapp
+
+// TYPES
+
+interface Icons {
+  whatsapp: string
+  mail: string
+}
+
+//CONFIG
+
+const icons = {
+  whatsapp: ws,
+  mail: mail
+} as const satisfies Icons
+
+// Contenedores
+
+const alignment_container = document.createElement('div')
+alignment_container.classList.add('alignment-container')
+
+const contact_container = document.createElement('div')
+contact_container.classList.add('contact-container')
+
+// boton mail
+
+const btn_mail = document.createElement('a')
+btn_mail.classList.add('btn-mail', 'btns')
+btn_mail.href = '#'
+
+const icon_mail = document.createElement('img')
+icon_mail.classList.add('icons', 'icon-mail')
+icon_mail.src = icons.mail
+icon_mail.alt = 'icon mail'
+
+const mail_text = document.createElement('span')
+mail_text.classList.add('mail-text')
+mail_text.textContent = "Reservas@lauranovoamusic.com"
+
+// Boton ws
+
+const btn_ws = document.createElement('a')
+btn_ws.classList.add('btn-ws', 'btns')
+btn_ws.href = '#'
+
+const icon_ws = document.createElement('img')
+icon_ws.classList.add('icons', 'icon_ws')
+icon_ws.src = icons.whatsapp
+icon_ws.alt = 'icon ws'
+
+const ws_text = document.createElement('span')
+ws_text.classList.add('ws-text')
+ws_text.textContent = "Reserva ahora"
+
+btn_mail.append(icon_mail, mail_text)
+btn_ws.append(icon_ws, ws_text)
+contact_container.append(btn_mail, btn_ws)
+
+container_general.append(logo, title, contact_container)
+alignment_container.appendChild(container_general)
+app?.appendChild(alignment_container)
