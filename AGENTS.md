@@ -39,26 +39,26 @@ This project is a React + TypeScript + Vite application. Key commands and conven
 3. Run `pnpm build` to produce production artifacts in `dist/`
 4. Run `pnpm preview` to locally preview the build
 
-## Contexto de Negocio y Producto
+## Business and Product Context
 
-**Producto:** Landing page oficial de Laura Novoa Music — violinista y cantante profesional especializada en servicios para matrimonios de lujo en Cartagena de Indias, Colombia.
+**Product:** Official landing page for Laura Novoa Music — professional violinist and singer specialized in luxury wedding services in Cartagena de Indias, Colombia.
 
-**Posicionamiento:** Exclusivo, sofisticado y formal. La marca transmite elegancia y distinción, acorde con el segmento de alta gama (matrimonios de lujo).
+**Positioning:** Exclusive, sophisticated, and formal. The brand conveys elegance and distinction, in line with the high-end segment (luxury weddings).
 
-**Estructura de la landing:**
-- Hero — Primera impresión visual con valor de marca y llamada a acción principal
-- Biografía — Historia y trayectoria artística de Laura Novoa
-- Repertorio — selección de piezas y estilos musicales para eventos
-- Testimonios — validación social de parejas y eventos anteriores
-- Formulario de contacto — captura simple y elegante de datos para seguimiento
+**Landing structure:**
+- Hero — First visual impression with brand value and main call to action
+- Biography — Artistic history and trajectory of Laura Novoa
+- Repertoire — selection of pieces and musical styles for events
+- Testimonials — social validation from previous couples and events
+- Contact form — simple and elegant data capture for follow-up
 
-**Conversión principal:** Contacto por WhatsApp — canal preferente para consultas rápidas y directas en el mercado colombiano.
+**Primary conversion:** WhatsApp contact — preferred channel for quick and direct inquiries in the Colombian market.
 
-**Consideraciones para agentes:**
-- El tono en todos los textos debe mantenerse exclusivo y formal
-- Los activos multimedia (imágenes, audio) deben reflejar el lujo y la ubicación geográfica
-- El formulario debe ser minimalista, solicitando solo información esencial para el contacto en WhatsApp
-- El Hero debe destacar claramente el número de WhatsApp o el CTA de "Solicitar cotización"
+**Agent considerations:**
+- Tone must remain exclusive and formal across all texts
+- Multimedia assets (images, audio) must reflect luxury and geographical location
+- The form should be minimalist, requesting only essential information for WhatsApp contact
+- The Hero should clearly feature the WhatsApp number or "Request Quote" CTA
 
 ## Common gotchas
 
